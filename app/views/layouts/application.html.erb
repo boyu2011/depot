@@ -2,15 +2,27 @@
 <html>
 <head>
   <title>Depot</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<!-- START_HIGHLIGHT -->
 <body class='<%= controller.controller_name %>'>
-<!-- END_HIGHLIGHT -->
-
-<%= yield %>
-
+	<div id="banner">
+		<%= image_tag("logo.png") %>
+		<%= @page_title || "Pragmatic Bookshelf"%>
+	</div>
+	<div id="columns">
+		<div id="side">
+			<ul>
+				<li><a href="www...">Home</a></li>
+				<li><a href="www...">Questions</a></li>
+				<li><a href="www...">News</a></li>
+				<li><a href="www...">Contact</a>></li>
+			</ul>
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>
